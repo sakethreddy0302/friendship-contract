@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Check-in</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card-container">
+
+        <!-- Page 1: Intro -->
+        <div class="page active" id="page-1">
+            <span class="badge">Page 1 of 11</span>
+            <h2>Hey Chotu!! this is Saketh, I was one among your friends</h2>
+            <p>I value our connection deeply, but I felt like we've been drifting apart recently. I put this together so we can be honest about where we stand.</p>
+            <button class="btn" onclick="nextPage(2)">Let's Talk</button>
+        </div>
+
+        <!-- Page 2: Initial Check -->
+        <div class="page" id="page-2">
+            <span class="badge">Page 2 of 11</span>
+            <h2>I know you might be busy with your things</h2>
+            <p>If you can spare me a minute or two I'll be happy.</p>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="spare_time" value="Yes" checked>
+                    <span>Yes, I can spare a minute</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="spare_time" value="No">
+                    <span>No, I'm too busy right now</span>
+                </label>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(1)">Back</button>
+                <button class="btn" onclick="handlePage2Next()">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 3: Q1 -->
+        <div class="page" id="page-3">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>1. Do you really enjoy talking with me?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q1" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q1" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb1" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(2)">Back</button>
+                <button class="btn" onclick="nextPage(4)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 4: Q2 -->
+        <div class="page" id="page-4">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>2. Do I make you smile?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q2" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q2" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb2" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(3)">Back</button>
+                <button class="btn" onclick="nextPage(5)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 5: Q3 -->
+        <div class="page" id="page-5">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>3. Have you ever thought to msg me but stopped?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q3" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q3" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb3" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(4)">Back</button>
+                <button class="btn" onclick="nextPage(6)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 6: Q4 -->
+        <div class="page" id="page-6">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>4. Do you trust me?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q4" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q4" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb4" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(5)">Back</button>
+                <button class="btn" onclick="nextPage(7)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 7: Q5 -->
+        <div class="page" id="page-7">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>5. Would you consider/choose me as a Best Friend?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q5" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q5" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb5" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(6)">Back</button>
+                <button class="btn" onclick="nextPage(8)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 8: Q6 -->
+        <div class="page" id="page-8">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>6. Do I hold an important role in your life?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q6" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q6" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb6" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(7)">Back</button>
+                <button class="btn" onclick="nextPage(9)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 9: Q7 -->
+        <div class="page" id="page-9">
+            <span class="badge">Be honest to me and tell the below things</span>
+            <h2>7. Am I just a person who is disturbing you?</h2>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="q7" value="Yes" checked>
+                    <span>Yes</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="q7" value="No">
+                    <span>No</span>
+                </label>
+            </div>
+            <textarea id="fb7" placeholder="Any thoughts on this? (Optional)" rows="2"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(8)">Back</button>
+                <button class="btn" onclick="nextPage(10)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 10: Final Decision -->
+        <div class="page" id="page-10">
+            <span class="badge">Final Decision</span>
+            <h2>Where do we go from here?</h2>
+            <p>How would you like us to proceed?</p>
+            <div class="options">
+                <label class="option-card">
+                    <input type="radio" name="final_decision" value="Continue with modified terms" checked>
+                    <span>Proceed with continuing our friendship by modifying terms and conditions</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="final_decision" value="End friendship">
+                    <span>End it from this second</span>
+                </label>
+            </div>
+            <textarea id="final_fb" placeholder="Any final thoughts before review? (Optional)" rows="3"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(9)">Back</button>
+                <button class="btn" onclick="buildReview(); nextPage(11);">Review Answers</button>
+            </div>
+        </div>
+
+        <!-- Page 11: Review -->
+        <div class="page" id="page-11">
+            <span class="badge">Review Before Submitting</span>
+            <h2>Summary of your responses</h2>
+            <p>Please review your answers below before hitting submit:</p>
+            <div class="review-box" id="review-content"></div>
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="nextPage(10)">Edit</button>
+                <button class="btn btn-submit" onclick="submitResponses()">Submit Response</button>
+            </div>
+        </div>
+
+        <!-- Page 12: Dynamic Thank You / Apology Screen -->
+        <div class="page" id="page-12">
+            <h2 id="final-heading">Thank You 💛</h2>
+            <p id="final-message">Your responses have been recorded securely.</p>
+        </div>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
